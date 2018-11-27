@@ -13246,6 +13246,10 @@ a.anchor-link {
 \newcommand{\R}{\mathbb R}
 \newcommand{\C}{\mathbb C}
 \newcommand{\id}{\mathrm{id}}
+\newcommand{\I}{\mathrm{i}}
+\newcommand{\E}{\mathrm{e}}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Im}{Im}
 \DeclareMathOperator{\diag}{diag}
 \require{AMScd}
 $</p>
@@ -13293,7 +13297,7 @@ or equivalently, $A=PDP^{-1}$.</p>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-octave"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="n">sym</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="n">sym</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span> <span class="n">sym</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">sym</span><span class="p">(</span><span class="mi">6</span><span class="p">)];</span>
@@ -13315,7 +13319,15 @@ or equivalently, $A=PDP^{-1}$.</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>P = (sym 2×2 matrix)
+<pre>OctSymPy v2.6.0: this is free software without warranty, see source.
+Initializing communication with SymPy using a popen2() pipe.
+Some output from the Python subprocess (pid 25326) might appear next.
+Python 2.7.15 (default, Jul 23 2018, 21:31:33) 
+[GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.39.2)] on darwin
+Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
+&gt;&gt;&gt; &gt;&gt;&gt; 
+OctSymPy: Communication established.  SymPy v1.3.
+P = (sym 2×2 matrix)
 
   ⎡-1  4/3⎤
   ⎢       ⎥
@@ -13834,11 +13846,14 @@ D = (sym 2×2 matrix)
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-octave"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">1</span><span class="p">;</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">1</span><span class="p">];</span> <span class="n">A</span><span class="p">=</span><span class="n">sym</span><span class="p">(</span><span class="n">A</span><span class="p">);</span> <span class="n">A</span><span class="p">=</span><span class="n">A</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
 <span class="p">[</span><span class="n">P</span><span class="p">,</span><span class="n">D</span><span class="p">]=</span><span class="nb">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">k</span><span class="p">=</span><span class="n">sym</span><span class="p">(</span><span class="s">&#39;k&#39;</span><span class="p">);</span>
+<span class="n">P</span>^<span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">P</span><span class="o">*</span><span class="n">D</span>^<span class="n">k</span><span class="o">*</span><span class="n">P</span>^<span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13870,6 +13885,32 @@ D = (sym 2×2 matrix)
   ⎢       1   ⅈ⎥
   ⎢  0    ─ + ─⎥
   ⎣       2   2⎦
+
+ans = (sym 2×2 matrix)
+
+  ⎡-ⅈ      ⎤
+  ⎢───  1/2⎥
+  ⎢ 2      ⎥
+  ⎢        ⎥
+  ⎢ ⅈ      ⎥
+  ⎢ ─   1/2⎥
+  ⎣ 2      ⎦
+
+ans = (sym 2×2 matrix)
+
+  ⎡          k          k              k            k⎤
+  ⎢   ⎛1   ⅈ⎞    ⎛1   ⅈ⎞        ⎛1   ⅈ⎞      ⎛1   ⅈ⎞ ⎥
+  ⎢   ⎜─ - ─⎟    ⎜─ + ─⎟      ⅈ⋅⎜─ - ─⎟    ⅈ⋅⎜─ + ─⎟ ⎥
+  ⎢   ⎝2   2⎠    ⎝2   2⎠        ⎝2   2⎠      ⎝2   2⎠ ⎥
+  ⎢   ──────── + ────────     ────────── - ──────────⎥
+  ⎢      2          2             2            2     ⎥
+  ⎢                                                  ⎥
+  ⎢           k            k           k          k  ⎥
+  ⎢    ⎛1   ⅈ⎞      ⎛1   ⅈ⎞     ⎛1   ⅈ⎞    ⎛1   ⅈ⎞   ⎥
+  ⎢  ⅈ⋅⎜─ - ─⎟    ⅈ⋅⎜─ + ─⎟     ⎜─ - ─⎟    ⎜─ + ─⎟   ⎥
+  ⎢    ⎝2   2⎠      ⎝2   2⎠     ⎝2   2⎠    ⎝2   2⎠   ⎥
+  ⎢- ────────── + ──────────    ──────── + ────────  ⎥
+  ⎣      2            2            2          2      ⎦
 
 </pre>
 </div>
