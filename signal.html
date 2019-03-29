@@ -1,64 +1,13 @@
-
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta charset="utf-8" />
 
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-<title>signal slides</title>
+<title>signal</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
-<!-- General and theme style sheets -->
-<link rel="stylesheet" href="reveal.js/css/reveal.css">
-<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
 
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'reveal.js/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-}
-
-</script>
-
-<!--[if lt IE 9]>
-<script src="reveal.js/lib/js/html5shiv.js"></script>
-<![endif]-->
-
-<!-- Loading the mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration -->
-
-<!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -255,7 +204,6 @@ th {
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -6800,15 +6748,15 @@ button.close {
 *
 */
 /*!
- *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.2.0');
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6865,6 +6813,19 @@ button.close {
   border: solid 0.08em #eee;
   border-radius: .1em;
 }
+.fa-pull-left {
+  float: left;
+}
+.fa-pull-right {
+  float: right;
+}
+.fa.fa-pull-left {
+  margin-right: .3em;
+}
+.fa.fa-pull-right {
+  margin-left: .3em;
+}
+/* Deprecated as of 4.4.0 */
 .pull-right {
   float: right;
 }
@@ -6880,6 +6841,10 @@ button.close {
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
+}
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
 }
 @-webkit-keyframes fa-spin {
   0% {
@@ -6902,31 +6867,31 @@ button.close {
   }
 }
 .fa-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
@@ -7411,6 +7376,7 @@ button.close {
 .fa-twitter:before {
   content: "\f099";
 }
+.fa-facebook-f:before,
 .fa-facebook:before {
   content: "\f09a";
 }
@@ -7423,6 +7389,7 @@ button.close {
 .fa-credit-card:before {
   content: "\f09d";
 }
+.fa-feed:before,
 .fa-rss:before {
   content: "\f09e";
 }
@@ -8060,7 +8027,8 @@ button.close {
 .fa-male:before {
   content: "\f183";
 }
-.fa-gittip:before {
+.fa-gittip:before,
+.fa-gratipay:before {
   content: "\f184";
 }
 .fa-sun-o:before {
@@ -8164,7 +8132,7 @@ button.close {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper:before {
+.fa-pied-piper-pp:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -8290,6 +8258,7 @@ button.close {
   content: "\f1ce";
 }
 .fa-ra:before,
+.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -8303,6 +8272,8 @@ button.close {
 .fa-git:before {
   content: "\f1d3";
 }
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
 .fa-hacker-news:before {
   content: "\f1d4";
 }
@@ -8470,6 +8441,657 @@ button.close {
 }
 .fa-meanpath:before {
   content: "\f20c";
+}
+.fa-buysellads:before {
+  content: "\f20d";
+}
+.fa-connectdevelop:before {
+  content: "\f20e";
+}
+.fa-dashcube:before {
+  content: "\f210";
+}
+.fa-forumbee:before {
+  content: "\f211";
+}
+.fa-leanpub:before {
+  content: "\f212";
+}
+.fa-sellsy:before {
+  content: "\f213";
+}
+.fa-shirtsinbulk:before {
+  content: "\f214";
+}
+.fa-simplybuilt:before {
+  content: "\f215";
+}
+.fa-skyatlas:before {
+  content: "\f216";
+}
+.fa-cart-plus:before {
+  content: "\f217";
+}
+.fa-cart-arrow-down:before {
+  content: "\f218";
+}
+.fa-diamond:before {
+  content: "\f219";
+}
+.fa-ship:before {
+  content: "\f21a";
+}
+.fa-user-secret:before {
+  content: "\f21b";
+}
+.fa-motorcycle:before {
+  content: "\f21c";
+}
+.fa-street-view:before {
+  content: "\f21d";
+}
+.fa-heartbeat:before {
+  content: "\f21e";
+}
+.fa-venus:before {
+  content: "\f221";
+}
+.fa-mars:before {
+  content: "\f222";
+}
+.fa-mercury:before {
+  content: "\f223";
+}
+.fa-intersex:before,
+.fa-transgender:before {
+  content: "\f224";
+}
+.fa-transgender-alt:before {
+  content: "\f225";
+}
+.fa-venus-double:before {
+  content: "\f226";
+}
+.fa-mars-double:before {
+  content: "\f227";
+}
+.fa-venus-mars:before {
+  content: "\f228";
+}
+.fa-mars-stroke:before {
+  content: "\f229";
+}
+.fa-mars-stroke-v:before {
+  content: "\f22a";
+}
+.fa-mars-stroke-h:before {
+  content: "\f22b";
+}
+.fa-neuter:before {
+  content: "\f22c";
+}
+.fa-genderless:before {
+  content: "\f22d";
+}
+.fa-facebook-official:before {
+  content: "\f230";
+}
+.fa-pinterest-p:before {
+  content: "\f231";
+}
+.fa-whatsapp:before {
+  content: "\f232";
+}
+.fa-server:before {
+  content: "\f233";
+}
+.fa-user-plus:before {
+  content: "\f234";
+}
+.fa-user-times:before {
+  content: "\f235";
+}
+.fa-hotel:before,
+.fa-bed:before {
+  content: "\f236";
+}
+.fa-viacoin:before {
+  content: "\f237";
+}
+.fa-train:before {
+  content: "\f238";
+}
+.fa-subway:before {
+  content: "\f239";
+}
+.fa-medium:before {
+  content: "\f23a";
+}
+.fa-yc:before,
+.fa-y-combinator:before {
+  content: "\f23b";
+}
+.fa-optin-monster:before {
+  content: "\f23c";
+}
+.fa-opencart:before {
+  content: "\f23d";
+}
+.fa-expeditedssl:before {
+  content: "\f23e";
+}
+.fa-battery-4:before,
+.fa-battery:before,
+.fa-battery-full:before {
+  content: "\f240";
+}
+.fa-battery-3:before,
+.fa-battery-three-quarters:before {
+  content: "\f241";
+}
+.fa-battery-2:before,
+.fa-battery-half:before {
+  content: "\f242";
+}
+.fa-battery-1:before,
+.fa-battery-quarter:before {
+  content: "\f243";
+}
+.fa-battery-0:before,
+.fa-battery-empty:before {
+  content: "\f244";
+}
+.fa-mouse-pointer:before {
+  content: "\f245";
+}
+.fa-i-cursor:before {
+  content: "\f246";
+}
+.fa-object-group:before {
+  content: "\f247";
+}
+.fa-object-ungroup:before {
+  content: "\f248";
+}
+.fa-sticky-note:before {
+  content: "\f249";
+}
+.fa-sticky-note-o:before {
+  content: "\f24a";
+}
+.fa-cc-jcb:before {
+  content: "\f24b";
+}
+.fa-cc-diners-club:before {
+  content: "\f24c";
+}
+.fa-clone:before {
+  content: "\f24d";
+}
+.fa-balance-scale:before {
+  content: "\f24e";
+}
+.fa-hourglass-o:before {
+  content: "\f250";
+}
+.fa-hourglass-1:before,
+.fa-hourglass-start:before {
+  content: "\f251";
+}
+.fa-hourglass-2:before,
+.fa-hourglass-half:before {
+  content: "\f252";
+}
+.fa-hourglass-3:before,
+.fa-hourglass-end:before {
+  content: "\f253";
+}
+.fa-hourglass:before {
+  content: "\f254";
+}
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before {
+  content: "\f255";
+}
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before {
+  content: "\f256";
+}
+.fa-hand-scissors-o:before {
+  content: "\f257";
+}
+.fa-hand-lizard-o:before {
+  content: "\f258";
+}
+.fa-hand-spock-o:before {
+  content: "\f259";
+}
+.fa-hand-pointer-o:before {
+  content: "\f25a";
+}
+.fa-hand-peace-o:before {
+  content: "\f25b";
+}
+.fa-trademark:before {
+  content: "\f25c";
+}
+.fa-registered:before {
+  content: "\f25d";
+}
+.fa-creative-commons:before {
+  content: "\f25e";
+}
+.fa-gg:before {
+  content: "\f260";
+}
+.fa-gg-circle:before {
+  content: "\f261";
+}
+.fa-tripadvisor:before {
+  content: "\f262";
+}
+.fa-odnoklassniki:before {
+  content: "\f263";
+}
+.fa-odnoklassniki-square:before {
+  content: "\f264";
+}
+.fa-get-pocket:before {
+  content: "\f265";
+}
+.fa-wikipedia-w:before {
+  content: "\f266";
+}
+.fa-safari:before {
+  content: "\f267";
+}
+.fa-chrome:before {
+  content: "\f268";
+}
+.fa-firefox:before {
+  content: "\f269";
+}
+.fa-opera:before {
+  content: "\f26a";
+}
+.fa-internet-explorer:before {
+  content: "\f26b";
+}
+.fa-tv:before,
+.fa-television:before {
+  content: "\f26c";
+}
+.fa-contao:before {
+  content: "\f26d";
+}
+.fa-500px:before {
+  content: "\f26e";
+}
+.fa-amazon:before {
+  content: "\f270";
+}
+.fa-calendar-plus-o:before {
+  content: "\f271";
+}
+.fa-calendar-minus-o:before {
+  content: "\f272";
+}
+.fa-calendar-times-o:before {
+  content: "\f273";
+}
+.fa-calendar-check-o:before {
+  content: "\f274";
+}
+.fa-industry:before {
+  content: "\f275";
+}
+.fa-map-pin:before {
+  content: "\f276";
+}
+.fa-map-signs:before {
+  content: "\f277";
+}
+.fa-map-o:before {
+  content: "\f278";
+}
+.fa-map:before {
+  content: "\f279";
+}
+.fa-commenting:before {
+  content: "\f27a";
+}
+.fa-commenting-o:before {
+  content: "\f27b";
+}
+.fa-houzz:before {
+  content: "\f27c";
+}
+.fa-vimeo:before {
+  content: "\f27d";
+}
+.fa-black-tie:before {
+  content: "\f27e";
+}
+.fa-fonticons:before {
+  content: "\f280";
+}
+.fa-reddit-alien:before {
+  content: "\f281";
+}
+.fa-edge:before {
+  content: "\f282";
+}
+.fa-credit-card-alt:before {
+  content: "\f283";
+}
+.fa-codiepie:before {
+  content: "\f284";
+}
+.fa-modx:before {
+  content: "\f285";
+}
+.fa-fort-awesome:before {
+  content: "\f286";
+}
+.fa-usb:before {
+  content: "\f287";
+}
+.fa-product-hunt:before {
+  content: "\f288";
+}
+.fa-mixcloud:before {
+  content: "\f289";
+}
+.fa-scribd:before {
+  content: "\f28a";
+}
+.fa-pause-circle:before {
+  content: "\f28b";
+}
+.fa-pause-circle-o:before {
+  content: "\f28c";
+}
+.fa-stop-circle:before {
+  content: "\f28d";
+}
+.fa-stop-circle-o:before {
+  content: "\f28e";
+}
+.fa-shopping-bag:before {
+  content: "\f290";
+}
+.fa-shopping-basket:before {
+  content: "\f291";
+}
+.fa-hashtag:before {
+  content: "\f292";
+}
+.fa-bluetooth:before {
+  content: "\f293";
+}
+.fa-bluetooth-b:before {
+  content: "\f294";
+}
+.fa-percent:before {
+  content: "\f295";
+}
+.fa-gitlab:before {
+  content: "\f296";
+}
+.fa-wpbeginner:before {
+  content: "\f297";
+}
+.fa-wpforms:before {
+  content: "\f298";
+}
+.fa-envira:before {
+  content: "\f299";
+}
+.fa-universal-access:before {
+  content: "\f29a";
+}
+.fa-wheelchair-alt:before {
+  content: "\f29b";
+}
+.fa-question-circle-o:before {
+  content: "\f29c";
+}
+.fa-blind:before {
+  content: "\f29d";
+}
+.fa-audio-description:before {
+  content: "\f29e";
+}
+.fa-volume-control-phone:before {
+  content: "\f2a0";
+}
+.fa-braille:before {
+  content: "\f2a1";
+}
+.fa-assistive-listening-systems:before {
+  content: "\f2a2";
+}
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: "\f2a3";
+}
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: "\f2a4";
+}
+.fa-glide:before {
+  content: "\f2a5";
+}
+.fa-glide-g:before {
+  content: "\f2a6";
+}
+.fa-signing:before,
+.fa-sign-language:before {
+  content: "\f2a7";
+}
+.fa-low-vision:before {
+  content: "\f2a8";
+}
+.fa-viadeo:before {
+  content: "\f2a9";
+}
+.fa-viadeo-square:before {
+  content: "\f2aa";
+}
+.fa-snapchat:before {
+  content: "\f2ab";
+}
+.fa-snapchat-ghost:before {
+  content: "\f2ac";
+}
+.fa-snapchat-square:before {
+  content: "\f2ad";
+}
+.fa-pied-piper:before {
+  content: "\f2ae";
+}
+.fa-first-order:before {
+  content: "\f2b0";
+}
+.fa-yoast:before {
+  content: "\f2b1";
+}
+.fa-themeisle:before {
+  content: "\f2b2";
+}
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: "\f2b3";
+}
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: "\f2b4";
+}
+.fa-handshake-o:before {
+  content: "\f2b5";
+}
+.fa-envelope-open:before {
+  content: "\f2b6";
+}
+.fa-envelope-open-o:before {
+  content: "\f2b7";
+}
+.fa-linode:before {
+  content: "\f2b8";
+}
+.fa-address-book:before {
+  content: "\f2b9";
+}
+.fa-address-book-o:before {
+  content: "\f2ba";
+}
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "\f2bb";
+}
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: "\f2bc";
+}
+.fa-user-circle:before {
+  content: "\f2bd";
+}
+.fa-user-circle-o:before {
+  content: "\f2be";
+}
+.fa-user-o:before {
+  content: "\f2c0";
+}
+.fa-id-badge:before {
+  content: "\f2c1";
+}
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: "\f2c2";
+}
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: "\f2c3";
+}
+.fa-quora:before {
+  content: "\f2c4";
+}
+.fa-free-code-camp:before {
+  content: "\f2c5";
+}
+.fa-telegram:before {
+  content: "\f2c6";
+}
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: "\f2c7";
+}
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: "\f2c8";
+}
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: "\f2c9";
+}
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: "\f2ca";
+}
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: "\f2cb";
+}
+.fa-shower:before {
+  content: "\f2cc";
+}
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: "\f2cd";
+}
+.fa-podcast:before {
+  content: "\f2ce";
+}
+.fa-window-maximize:before {
+  content: "\f2d0";
+}
+.fa-window-minimize:before {
+  content: "\f2d1";
+}
+.fa-window-restore:before {
+  content: "\f2d2";
+}
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "\f2d3";
+}
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: "\f2d4";
+}
+.fa-bandcamp:before {
+  content: "\f2d5";
+}
+.fa-grav:before {
+  content: "\f2d6";
+}
+.fa-etsy:before {
+  content: "\f2d7";
+}
+.fa-imdb:before {
+  content: "\f2d8";
+}
+.fa-ravelry:before {
+  content: "\f2d9";
+}
+.fa-eercast:before {
+  content: "\f2da";
+}
+.fa-microchip:before {
+  content: "\f2db";
+}
+.fa-snowflake-o:before {
+  content: "\f2dc";
+}
+.fa-superpowers:before {
+  content: "\f2dd";
+}
+.fa-wpexplorer:before {
+  content: "\f2de";
+}
+.fa-meetup:before {
+  content: "\f2e0";
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 /*!
 *
@@ -8750,6 +9372,10 @@ div.traceback-wrapper {
   max-width: 800px;
   margin: auto;
 }
+div.traceback-wrapper pre.traceback {
+  max-height: 600px;
+  overflow: auto;
+}
 /**
  * Primary styles
  *
@@ -8775,6 +9401,10 @@ body > #header {
   z-index: 100;
 }
 body > #header #header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
   box-sizing: border-box;
@@ -8806,13 +9436,16 @@ body > #header .header-bar {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-@media (max-width: 991px) {
-  #ipython_notebook {
-    margin-left: 10px;
-  }
-}
 [dir="rtl"] #ipython_notebook {
+  margin-right: 10px;
+  margin-left: 0;
+}
+[dir="rtl"] #ipython_notebook.pull-left {
   float: right !important;
+  float: right;
+}
+.flex-spacer {
+  flex: 1;
 }
 #noscript {
   width: auto;
@@ -8847,8 +9480,14 @@ body > #header .header-bar {
 input.ui-button {
   padding: 0.3em 0.9em;
 }
+span#kernel_logo_widget {
+  margin: 0 10px;
+}
 span#login_widget {
   float: right;
+}
+[dir="rtl"] span#login_widget {
+  float: left;
 }
 span#login_widget > .button,
 #logout {
@@ -8964,6 +9603,9 @@ span#login_widget > .button .badge,
   overflow: auto;
   flex: 1;
 }
+.modal-header {
+  cursor: move;
+}
 @media (min-width: 768px) {
   .modal .modal-dialog {
     width: 700px;
@@ -8984,6 +9626,19 @@ span#login_widget > .button .badge,
   display: inline-block;
   margin-bottom: -4px;
 }
+[dir="rtl"] .center-nav form.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] .center-nav .navbar-text {
+  float: right;
+}
+[dir="rtl"] .navbar-inner {
+  text-align: right;
+}
+[dir="rtl"] div.text-left {
+  text-align: right;
+}
 /*!
 *
 * IPython tree view
@@ -9000,34 +9655,42 @@ span#login_widget > .button .badge,
   margin: 0;
 }
 .alternate_upload input.fileinput {
-  text-align: center;
-  vertical-align: middle;
-  display: inline;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
   opacity: 0;
   z-index: 2;
-  width: 12ex;
-  margin-right: -12ex;
+}
+.alternate_upload .btn-xs > input.fileinput {
+  margin: -1px -5px;
 }
 .alternate_upload .btn-upload {
+  position: relative;
   height: 22px;
+}
+::-webkit-file-upload-button {
+  cursor: pointer;
 }
 /**
  * Primary styles
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
   padding-bottom: 4px;
+}
+[dir="rtl"] ul#tabs.nav-tabs > li {
+  float: right;
+}
+[dir="rtl"] ul#tabs.nav.nav-tabs {
+  padding-right: 0;
 }
 ul.breadcrumb a:focus,
 ul.breadcrumb a:hover {
@@ -9047,15 +9710,13 @@ ul.breadcrumb span {
 .list_toolbar .tree-buttons {
   padding-top: 1px;
 }
-[dir="rtl"] .list_toolbar .tree-buttons {
+[dir="rtl"] .list_toolbar .tree-buttons .pull-right {
   float: left !important;
+  float: left;
 }
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
+[dir="rtl"] .list_toolbar .col-sm-4,
+[dir="rtl"] .list_toolbar .col-sm-8 {
+  float: right;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9111,7 +9772,7 @@ ul.breadcrumb span {
 .list_item > div input {
   margin-right: 7px;
   margin-left: 14px;
-  vertical-align: baseline;
+  vertical-align: text-bottom;
   line-height: 22px;
   position: relative;
   top: -1px;
@@ -9121,6 +9782,9 @@ ul.breadcrumb span {
   margin-left: -1px;
   vertical-align: baseline;
   line-height: 22px;
+}
+[dir="rtl"] .list_item > div input {
+  margin-right: 0;
 }
 .new-file input[type=checkbox] {
   visibility: hidden;
@@ -9136,6 +9800,14 @@ ul.breadcrumb span {
   margin-left: 7px;
   line-height: 22px;
   vertical-align: baseline;
+}
+.item_modified {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+[dir="rtl"] .item_modified.pull-right {
+  float: left !important;
+  float: left;
 }
 .item_buttons {
   line-height: 1em;
@@ -9164,6 +9836,14 @@ ul.breadcrumb span {
   margin-right: 7px;
   float: left;
 }
+[dir="rtl"] .item_buttons.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .item_buttons .kernel-name {
+  margin-left: 7px;
+  float: right;
+}
 .toolbar_info {
   height: 24px;
   line-height: 24px;
@@ -9189,18 +9869,32 @@ ul.breadcrumb span {
   background-color: transparent;
   font-weight: bold;
 }
+.sort_button {
+  display: inline-block;
+  padding-left: 7px;
+}
+[dir="rtl"] .sort_button.pull-right {
+  float: left !important;
+  float: left;
+}
 #tree-selector {
   padding-right: 0px;
-}
-[dir="rtl"] #tree-selector a {
-  float: right;
 }
 #button-select-all {
   min-width: 50px;
 }
+[dir="rtl"] #button-select-all.btn {
+  float: right ;
+}
 #select-all {
   margin-left: 7px;
   margin-right: 2px;
+  margin-top: 2px;
+  height: 16px;
+}
+[dir="rtl"] #select-all.pull-left {
+  float: right !important;
+  float: right;
 }
 .menu_icon {
   margin-right: 2px;
@@ -9218,6 +9912,12 @@ ul.breadcrumb span {
   -moz-osx-font-smoothing: grayscale;
   content: "\f114";
 }
+.folder_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.folder_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .folder_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9234,6 +9934,12 @@ ul.breadcrumb span {
   content: "\f02d";
   position: relative;
   top: -1px;
+}
+.notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .notebook_icon:before.pull-left {
   margin-right: .3em;
@@ -9253,6 +9959,12 @@ ul.breadcrumb span {
   top: -1px;
   color: #5cb85c;
 }
+.running_notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.running_notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .running_notebook_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9270,6 +9982,12 @@ ul.breadcrumb span {
   position: relative;
   top: -2px;
 }
+.file_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.file_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .file_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9284,8 +10002,11 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
+#new-menu .dropdown-header {
+  font-size: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 3px;
+  margin: -3px 20px 0;
 }
 .kernel-menu-icon {
   padding-right: 12px;
@@ -9332,9 +10053,6 @@ ul#new-menu {
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
 }
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
-}
 .delete-button {
   display: none;
 }
@@ -9342,6 +10060,12 @@ ul#new-menu {
   display: none;
 }
 .rename-button {
+  display: none;
+}
+.move-button {
+  display: none;
+}
+.download-button {
   display: none;
 }
 .shutdown-button {
@@ -9384,6 +10108,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator.pull-left {
   margin-right: .3em;
 }
@@ -9398,6 +10128,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
+}
+.dirty-indicator-dirty.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-dirty.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-dirty.pull-left {
   margin-right: .3em;
@@ -9414,6 +10150,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator-clean.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator-clean.pull-left {
   margin-right: .3em;
 }
@@ -9428,6 +10170,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f00c";
+}
+.dirty-indicator-clean:before.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean:before.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-clean:before.pull-left {
   margin-right: .3em;
@@ -9473,14 +10221,132 @@ ul#new-menu {
     box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   }
 }
+.CodeMirror-dialog {
+  background-color: #fff;
+}
 /*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -9559,12 +10425,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -9577,27 +10451,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -9793,7 +10679,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -9803,11 +10691,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -10061,6 +10962,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -10099,7 +11003,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -10259,39 +11163,35 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 .rendered_html ul {
   list-style: disc;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ul ul {
   list-style: square;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ul ul ul {
   list-style: circle;
-  margin: 0em 2em;
 }
 .rendered_html ol {
   list-style: decimal;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ol ol {
   list-style: upper-alpha;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ol ol ol {
   list-style: lower-alpha;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol {
   list-style: lower-roman;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol ol {
   list-style: decimal;
-  margin: 0em 2em;
 }
 .rendered_html * + ul {
   margin-top: 1em;
@@ -10305,14 +11205,23 @@ div.output_unrecognized a:hover {
 }
 .rendered_html pre {
   margin: 1em 2em;
+  padding: 0px;
+  background-color: #fff;
+}
+.rendered_html code {
+  background-color: #eff0f1;
+}
+.rendered_html p code {
+  padding: 1px 5px;
+}
+.rendered_html pre code {
+  background-color: #fff;
 }
 .rendered_html pre,
 .rendered_html code {
   border: 0;
-  background-color: #fff;
   color: #000;
   font-size: 100%;
-  padding: 0px;
 }
 .rendered_html blockquote {
   margin: 1em 2em;
@@ -10320,24 +11229,36 @@ div.output_unrecognized a:hover {
 .rendered_html table {
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: none;
   border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
 }
 .rendered_html tr,
 .rendered_html th,
 .rendered_html td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin: 1em 2em;
-}
-.rendered_html td,
-.rendered_html th {
-  text-align: left;
+  text-align: right;
   vertical-align: middle;
-  padding: 4px;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
 }
 .rendered_html th {
   font-weight: bold;
+}
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
 }
 .rendered_html * + table {
   margin-top: 1em;
@@ -10364,6 +11285,15 @@ div.output_unrecognized a:hover {
 .rendered_html img.unconfined,
 .rendered_html svg.unconfined {
   max-width: none;
+}
+.rendered_html .alert {
+  margin-bottom: initial;
+}
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] .rendered_html p {
+  text-align: right;
 }
 div.text_cell {
   /* Old browsers */
@@ -10418,8 +11348,17 @@ h6:hover .anchor-link {
   overflow-x: auto;
   overflow-y: hidden;
 }
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered .rendered_html td {
+  max-width: none;
+}
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -10556,6 +11495,28 @@ kbd {
   padding-top: 1px;
   padding-bottom: 1px;
 }
+.jupyter-keybindings {
+  padding: 1px;
+  line-height: 24px;
+  border-bottom: 1px solid gray;
+}
+.jupyter-keybindings input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.jupyter-keybindings i {
+  padding: 6px;
+}
+.well code {
+  background-color: #ffffff;
+  border-color: #ababab;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
 /* CSS for the cell toolbar */
 .celltoolbar {
   border: thin solid #CFCFCF;
@@ -10688,6 +11649,152 @@ select[multiple].celltoolbar select {
   margin-left: 5px;
   margin-right: 5px;
 }
+.tags_button_container {
+  width: 100%;
+  display: flex;
+}
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+.tag-container > * {
+  margin: 0 4px;
+}
+.remove-tag-btn {
+  margin-left: 4px;
+}
+.tags-input {
+  display: flex;
+}
+.cell-tag:last-child:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  /* Fade to background color of cell toolbar */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #EEE);
+}
+.tags-input > * {
+  margin-left: 4px;
+}
+.cell-tag,
+.tags-input input,
+.tags-input button {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 1px;
+  box-shadow: none;
+  width: inherit;
+  font-size: inherit;
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 4px;
+  display: inline-block;
+}
+.cell-tag:focus,
+.tags-input input:focus,
+.tags-input button:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.cell-tag::-moz-placeholder,
+.tags-input input::-moz-placeholder,
+.tags-input button::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.cell-tag:-ms-input-placeholder,
+.tags-input input:-ms-input-placeholder,
+.tags-input button:-ms-input-placeholder {
+  color: #999;
+}
+.cell-tag::-webkit-input-placeholder,
+.tags-input input::-webkit-input-placeholder,
+.tags-input button::-webkit-input-placeholder {
+  color: #999;
+}
+.cell-tag::-ms-expand,
+.tags-input input::-ms-expand,
+.tags-input button::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+.cell-tag[readonly],
+.tags-input input[readonly],
+.tags-input button[readonly],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  cursor: not-allowed;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button {
+  height: auto;
+}
+select.cell-tag,
+select.tags-input input,
+select.tags-input button {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button,
+select[multiple].cell-tag,
+select[multiple].tags-input input,
+select[multiple].tags-input button {
+  height: auto;
+}
+.cell-tag,
+.tags-input button {
+  padding: 0px 4px;
+}
+.cell-tag {
+  background-color: #fff;
+  white-space: nowrap;
+}
+.tags-input input[type=text]:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
 .completions {
   position: absolute;
   z-index: 110;
@@ -10713,16 +11820,28 @@ select[multiple].celltoolbar select {
 .completions select option.context {
   color: #286090;
 }
-#kernel_logo_widget {
-  float: right !important;
-  float: right;
-}
 #kernel_logo_widget .current_kernel_logo {
   display: none;
   margin-top: -1px;
   margin-bottom: -1px;
   width: 32px;
   height: 32px;
+}
+[dir="rtl"] #kernel_logo_widget {
+  float: left !important;
+  float: left;
+}
+.modal .modal-body .move-path {
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+  align-items: center;
+}
+.modal .modal-body .move-path .server-root {
+  padding-right: 20px;
+}
+.modal .modal-body .move-path .path-input {
+  flex: 1;
 }
 #menubar {
   box-sizing: border-box;
@@ -10744,11 +11863,41 @@ select[multiple].celltoolbar select {
 #menubar .navbar-collapse {
   clear: left;
 }
+[dir="rtl"] #menubar .navbar-toggle {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-collapse {
+  clear: right;
+}
+[dir="rtl"] #menubar .navbar-nav {
+  float: right;
+}
+[dir="rtl"] #menubar .nav {
+  padding-right: 0px;
+}
+[dir="rtl"] #menubar .navbar-nav > li {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-right {
+  float: left !important;
+}
+[dir="rtl"] ul.dropdown-menu {
+  text-align: right;
+  left: auto;
+}
+[dir="rtl"] ul#new-menu.dropdown-menu {
+  right: auto;
+  left: 0;
+}
 .nav-wrapper {
   border-bottom: 1px solid #e7e7e7;
 }
 i.menu-icon {
   padding-top: 4px;
+}
+[dir="rtl"] i.menu-icon.pull-right {
+  float: left !important;
+  float: left;
 }
 ul#help_menu li a {
   overflow: hidden;
@@ -10756,6 +11905,17 @@ ul#help_menu li a {
 }
 ul#help_menu li a i {
   margin-right: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a {
+  padding-left: 2.2em;
+}
+[dir="rtl"] ul#help_menu li a i {
+  margin-right: 0;
+  margin-left: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a i.pull-right {
+  float: left !important;
+  float: left;
 }
 .dropdown-submenu {
   position: relative;
@@ -10765,6 +11925,10 @@ ul#help_menu li a i {
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
+}
+[dir="rtl"] .dropdown-submenu > .dropdown-menu {
+  right: 100%;
+  margin-right: -1px;
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -10783,11 +11947,23 @@ ul#help_menu li a i {
   margin-top: 2px;
   margin-right: -10px;
 }
+.dropdown-submenu > a:after.fa-pull-left {
+  margin-right: .3em;
+}
+.dropdown-submenu > a:after.fa-pull-right {
+  margin-left: .3em;
+}
 .dropdown-submenu > a:after.pull-left {
   margin-right: .3em;
 }
 .dropdown-submenu > a:after.pull-right {
   margin-left: .3em;
+}
+[dir="rtl"] .dropdown-submenu > a:after {
+  float: left;
+  content: "\f0d9";
+  margin-right: 0;
+  margin-left: -10px;
 }
 .dropdown-submenu:hover > a:after {
   color: #262626;
@@ -10804,6 +11980,10 @@ ul#help_menu li a i {
   float: right;
   z-index: 10;
 }
+[dir="rtl"] #notification_area {
+  float: left !important;
+  float: left;
+}
 .indicator_area {
   float: right !important;
   float: right;
@@ -10814,6 +11994,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] .indicator_area {
+  float: left !important;
+  float: left;
 }
 #kernel_indicator {
   float: right !important;
@@ -10831,6 +12015,12 @@ ul#help_menu li a i {
   padding-left: 5px;
   padding-right: 5px;
 }
+[dir="rtl"] #kernel_indicator {
+  float: left !important;
+  float: left;
+  border-left: 0;
+  border-right: 1px solid;
+}
 #modal_indicator {
   float: right !important;
   float: right;
@@ -10841,6 +12031,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] #modal_indicator {
+  float: left !important;
+  float: left;
 }
 #readonly-indicator {
   float: right !important;
@@ -10871,6 +12065,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f040";
 }
+.edit_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.edit_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
+}
 .edit_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
 }
@@ -10885,6 +12085,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: ' ';
+}
+.command_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.command_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
 }
 .command_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
@@ -10901,6 +12107,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f10c";
 }
+.kernel_idle_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_idle_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_idle_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10915,6 +12127,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f111";
+}
+.kernel_busy_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_busy_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_busy_icon:before.pull-left {
   margin-right: .3em;
@@ -10931,6 +12149,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f1e2";
 }
+.kernel_dead_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_dead_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_dead_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10945,6 +12169,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f127";
+}
+.kernel_disconnected_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_disconnected_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_disconnected_icon:before.pull-left {
   margin-right: .3em;
@@ -11335,27 +12565,46 @@ div#pager .ui-resizable-handle::after {
   flex: 1;
 }
 span.save_widget {
-  margin-top: 6px;
+  height: 30px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 50%;
+  flex: 1;
 }
 span.save_widget span.filename {
-  height: 1em;
+  height: 100%;
   line-height: 1em;
-  padding: 3px;
   margin-left: 16px;
   border: none;
   font-size: 146.5%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   border-radius: 2px;
 }
 span.save_widget span.filename:hover {
   background-color: #e6e6e6;
 }
+[dir="rtl"] span.save_widget.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] span.save_widget span.filename {
+  margin-left: 0;
+  margin-right: 16px;
+}
 span.checkpoint_status,
 span.autosave_status {
   font-size: small;
+  white-space: nowrap;
+  padding: 0 5px;
 }
 @media (max-width: 767px) {
   span.save_widget {
     font-size: small;
+    padding: 0 0 0 5px;
   }
   span.checkpoint_status,
   span.autosave_status {
@@ -11399,6 +12648,9 @@ span.autosave_status {
   margin-top: 0px;
   margin-left: 5px;
 }
+.toolbar-btn-label {
+  margin-left: 6px;
+}
 #maintoolbar {
   margin-bottom: -3px;
   margin-top: -8px;
@@ -11418,6 +12670,10 @@ span.autosave_status {
 }
 .select-xs {
   height: 24px;
+}
+[dir="rtl"] .btn-group > .btn,
+.btn-group-vertical > .btn {
+  float: right;
 }
 .pulse,
 .dropdown-menu > li > a.pulse,
@@ -11568,6 +12824,10 @@ ul.typeahead-list i {
   margin-left: -10px;
   width: 18px;
 }
+[dir="rtl"] ul.typeahead-list i {
+  margin-left: 0;
+  margin-right: -10px;
+}
 ul.typeahead-list {
   max-height: 80vh;
   overflow: auto;
@@ -11576,6 +12836,13 @@ ul.typeahead-list > li > a {
   /** Firefox bug **/
   /* see https://github.com/jupyter/notebook/issues/559 */
   white-space: normal;
+}
+ul.typeahead-list  > li > a.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .typeahead-list {
+  text-align: right;
 }
 .cmd-palette .modal-body {
   padding: 7px;
@@ -11587,10 +12854,19 @@ ul.typeahead-list > li > a {
   outline: none;
 }
 .no-shortcut {
-  display: none;
+  min-width: 20px;
+  color: transparent;
+}
+[dir="rtl"] .no-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .command-shortcut.pull-right {
+  float: left !important;
+  float: left;
 }
 .command-shortcut:before {
-  content: "(command)";
+  content: "(command mode)";
   padding-right: 3px;
   color: #777777;
 }
@@ -11599,6 +12875,10 @@ ul.typeahead-list > li > a {
   padding-right: 3px;
   color: #777777;
 }
+[dir="rtl"] .edit-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
   background-color: #BBDEFB;
@@ -11606,6 +12886,12 @@ ul.typeahead-list > li > a {
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
+}
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
+  border-left: none;
+}
+[dir="rtl"] #find-and-replace .input-group-btn + .form-control {
+  border-right: none;
 }
 #find-and-replace #replace-preview .replace .match {
   background-color: #FFCDD2;
@@ -11774,144 +13060,68 @@ ul.typeahead-list > li > a {
 
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
-.reveal {
-  font-size: 160%;
+body {
+  overflow: visible;
+  padding: 8px;
 }
-.reveal pre {
-  width: inherit;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-}
-.reveal pre code {
-  padding: 0px;
-}
-.reveal section img {
-  border: 0px solid black;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-}
-.reveal i {
-  font-style: normal;
-  font-family: FontAwesome;
-  font-size: 2em;
-}
-.reveal .slides {
-  text-align: left;
-}
-.reveal.fade {
-  opacity: 1;
-}
-.reveal .progress {
-  position: static;
-}
-.reveal .controls .navigate-left,
-.reveal .controls .navigate-left.enabled {
-  border-right-color: #727272;
-}
-.reveal .controls .navigate-left.enabled:hover,
-.reveal .controls .navigate-left.enabled.enabled:hover {
-  border-right-color: #dfdfdf;
-}
-.reveal .controls .navigate-right,
-.reveal .controls .navigate-right.enabled {
-  border-left-color: #727272;
-}
-.reveal .controls .navigate-right.enabled:hover,
-.reveal .controls .navigate-right.enabled.enabled:hover {
-  border-left-color: #dfdfdf;
-}
-.reveal .controls .navigate-up,
-.reveal .controls .navigate-up.enabled {
-  border-bottom-color: #727272;
-}
-.reveal .controls .navigate-up.enabled:hover,
-.reveal .controls .navigate-up.enabled.enabled:hover {
-  border-bottom-color: #dfdfdf;
-}
-.reveal .controls .navigate-down,
-.reveal .controls .navigate-down.enabled {
-  border-top-color: #727272;
-}
-.reveal .controls .navigate-down.enabled:hover,
-.reveal .controls .navigate-down.enabled.enabled:hover {
-  border-top-color: #dfdfdf;
-}
-.reveal .progress span {
-  background: #727272;
-}
-div.input_area {
-  padding: 0.06em;
-}
-div.code_cell {
-  background-color: transparent;
-}
-div.prompt {
-  width: 11ex;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  text-align: right;
-}
-div.output_area pre {
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-}
-div.output_prompt {
-  /* 5px right shift to account for margin in parent container */
-  margin: 5px 5px 0 0;
-}
-div.text_cell.rendered .rendered_html {
-  /* The H1 height seems miscalculated, we are just hidding the scrollbar */
-  overflow-y: hidden;
-}
-a.anchor-link {
-  /* There is still an anchor, we are only hidding it */
-  display: none;
-}
-.rendered_html p {
-  text-align: inherit;
-}
-::-webkit-scrollbar
-{
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar *
-{
-  background:transparent;
-}
-::-webkit-scrollbar-thumb
-{
-  background: #727272 !important;
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
 }
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
 <link rel="stylesheet" href="custom.css">
 
-</head>
-
-
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
 
-
-<div class="reveal">
-<div class="slides">
-<section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Recovering-a-signal-by-the-method-of-least-squares"><center>Recovering a signal by the method of least squares</center><a class="anchor-link" href="#Recovering-a-signal-by-the-method-of-least-squares">&#182;</a></h1>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Definition.">Definition.<a class="anchor-link" href="#Definition.">&#182;</a></h2><p>A <em>real trigonometric polynomial</em> is an expression of the form
 \begin{equation*}
@@ -11922,16 +13132,15 @@ where the coefficients $a_n$ and $b_n$ are all real numbers.</p>
 
 </div>
 </div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Example.">Example.<a class="anchor-link" href="#Example.">&#182;</a></h2><p>The function $s(t) = \frac{1}{2} + \sin(\pi t) - 2\cos(\pi t)$ is a trig polynomial.</p>
 
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
@@ -11940,7 +13149,7 @@ where the coefficients $a_n$ and $b_n$ are all real numbers.</p>
 <div class=" highlight hl-octave"><pre><span></span><span class="nb">fplot</span><span class="p">(</span><span class="s">&quot;1/2 + sin(pi*x) - 2*cos(pi*x)&quot;</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11950,7 +13159,7 @@ where the coefficients $a_n$ and $b_n$ are all real numbers.</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -12090,10 +13299,9 @@ where the coefficients $a_n$ and $b_n$ are all real numbers.</p>
 </div>
 </div>
 
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>We don't typically observe signals as continuous functions.</li>
@@ -12102,7 +13310,7 @@ where the coefficients $a_n$ and $b_n$ are all real numbers.</p>
 
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
@@ -12115,7 +13323,7 @@ where the coefficients $a_n$ and $b_n$ are all real numbers.</p>
 <span class="nb">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&quot;filled&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12125,7 +13333,7 @@ where the coefficients $a_n$ and $b_n$ are all real numbers.</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -12558,10 +13766,9 @@ where the coefficients $a_n$ and $b_n$ are all real numbers.</p>
 </div>
 </div>
 
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>To be honest, there is usually noise in the channel.</li>
@@ -12569,7 +13776,7 @@ where the coefficients $a_n$ and $b_n$ are all real numbers.</p>
 
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
@@ -12582,7 +13789,7 @@ where the coefficients $a_n$ and $b_n$ are all real numbers.</p>
 <span class="nb">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&quot;filled&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12592,7 +13799,7 @@ where the coefficients $a_n$ and $b_n$ are all real numbers.</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -12702,308 +13909,308 @@ where the coefficients $a_n$ and $b_n$ are all real numbers.</p>
 <g color="#FFFFFF" fill="none" stroke="rgb(  0,   0,   0)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
 </g>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(23.4,63.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(23.4,63.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(23.4,51.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(23.4,51.6) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_2a"><title>gnuplot_plot_2a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(33.8,69.0) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(33.8,69.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(33.8,57.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(33.8,57.5) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_3a"><title>gnuplot_plot_3a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(44.2,71.4) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(44.2,71.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(44.2,70.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(44.2,70.6) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_4a"><title>gnuplot_plot_4a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(54.7,98.7) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(54.7,98.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(54.7,82.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(54.7,82.5) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_5a"><title>gnuplot_plot_5a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(65.1,107.8) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(65.1,107.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(65.1,101.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(65.1,101.9) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_6a"><title>gnuplot_plot_6a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(75.5,120.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(75.5,120.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(75.5,137.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(75.5,137.9) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_7a"><title>gnuplot_plot_7a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(85.9,131.2) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(85.9,131.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(85.9,148.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(85.9,148.5) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_8a"><title>gnuplot_plot_8a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(96.3,166.7) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(96.3,166.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(96.3,175.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(96.3,175.7) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_9a"><title>gnuplot_plot_9a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(106.7,195.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(106.7,195.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(106.7,177.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(106.7,177.7) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_10a"><title>gnuplot_plot_10a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(117.2,196.7) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(117.2,196.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(117.2,196.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(117.2,196.2) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_11a"><title>gnuplot_plot_11a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(127.6,250.0) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(127.6,250.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(127.6,229.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(127.6,229.9) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_12a"><title>gnuplot_plot_12a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(138.0,256.8) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(138.0,256.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(138.0,253.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(138.0,253.2) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_13a"><title>gnuplot_plot_13a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(148.4,269.8) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(148.4,269.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(148.4,270.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(148.4,270.4) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_14a"><title>gnuplot_plot_14a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(158.8,293.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(158.8,293.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(158.8,296.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(158.8,296.2) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_15a"><title>gnuplot_plot_15a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(169.3,294.8) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(169.3,294.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(169.3,313.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(169.3,313.0) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_16a"><title>gnuplot_plot_16a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(179.7,322.9) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(179.7,322.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(179.7,332.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(179.7,332.4) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_17a"><title>gnuplot_plot_17a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(190.1,326.9) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(190.1,326.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(190.1,336.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(190.1,336.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_18a"><title>gnuplot_plot_18a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(200.5,348.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(200.5,348.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(200.5,369.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(200.5,369.2) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_19a"><title>gnuplot_plot_19a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(210.9,356.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(210.9,356.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(210.9,349.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(210.9,349.8) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_20a"><title>gnuplot_plot_20a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(221.3,364.2) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(221.3,364.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(221.3,361.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(221.3,361.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_21a"><title>gnuplot_plot_21a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(231.8,378.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(231.8,378.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(231.8,372.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(231.8,372.9) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_22a"><title>gnuplot_plot_22a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(242.2,379.4) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(242.2,379.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(242.2,381.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(242.2,381.9) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_23a"><title>gnuplot_plot_23a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(252.6,374.4) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(252.6,374.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(252.6,374.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(252.6,374.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_24a"><title>gnuplot_plot_24a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(263.0,383.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(263.0,383.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(263.0,374.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(263.0,374.7) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_25a"><title>gnuplot_plot_25a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(273.4,358.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(273.4,358.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(273.4,377.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(273.4,377.7) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_26a"><title>gnuplot_plot_26a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(283.9,357.7) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(283.9,357.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(283.9,348.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(283.9,348.2) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_27a"><title>gnuplot_plot_27a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(294.3,354.5) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(294.3,354.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(294.3,350.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(294.3,350.8) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_28a"><title>gnuplot_plot_28a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(304.7,329.8) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(304.7,329.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(304.7,318.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(304.7,318.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_29a"><title>gnuplot_plot_29a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(315.1,316.0) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(315.1,316.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(315.1,323.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(315.1,323.8) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_30a"><title>gnuplot_plot_30a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(325.5,311.5) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(325.5,311.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(325.5,315.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(325.5,315.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_31a"><title>gnuplot_plot_31a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(335.9,291.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(335.9,291.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(335.9,282.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(335.9,282.2) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_32a"><title>gnuplot_plot_32a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(346.4,256.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(346.4,256.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(346.4,263.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(346.4,263.7) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_33a"><title>gnuplot_plot_33a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(356.8,247.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(356.8,247.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(356.8,254.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(356.8,254.8) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_34a"><title>gnuplot_plot_34a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(367.2,226.3) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(367.2,226.3) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(367.2,227.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(367.2,227.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_35a"><title>gnuplot_plot_35a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(377.6,193.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(377.6,193.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(377.6,206.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(377.6,206.6) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_36a"><title>gnuplot_plot_36a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(388.0,173.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(388.0,173.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(388.0,189.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(388.0,189.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_37a"><title>gnuplot_plot_37a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(398.4,158.2) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(398.4,158.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(398.4,168.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(398.4,168.0) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_38a"><title>gnuplot_plot_38a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(408.9,128.4) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(408.9,128.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(408.9,137.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(408.9,137.0) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_39a"><title>gnuplot_plot_39a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(419.3,93.8) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(419.3,93.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(419.3,115.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(419.3,115.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_40a"><title>gnuplot_plot_40a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(429.7,92.5) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(429.7,92.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(429.7,94.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(429.7,94.6) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_41a"><title>gnuplot_plot_41a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(440.1,88.0) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(440.1,88.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(440.1,74.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(440.1,74.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_42a"><title>gnuplot_plot_42a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(450.5,61.9) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(450.5,61.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(450.5,60.3) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(450.5,60.3) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_43a"><title>gnuplot_plot_43a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(461.0,57.9) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(461.0,57.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(461.0,56.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(461.0,56.0) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_44a"><title>gnuplot_plot_44a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(471.4,49.5) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(471.4,49.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(471.4,33.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(471.4,33.7) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_45a"><title>gnuplot_plot_45a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(481.8,31.5) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(481.8,31.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(481.8,50.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(481.8,50.0) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_46a"><title>gnuplot_plot_46a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(492.2,34.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(492.2,34.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(492.2,29.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(492.2,29.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_47a"><title>gnuplot_plot_47a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(502.6,36.3) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(502.6,36.3) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(502.6,31.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(502.6,31.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_48a"><title>gnuplot_plot_48a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(513.0,31.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(513.0,31.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(513.0,15.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(513.0,15.8) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_49a"><title>gnuplot_plot_49a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(523.5,26.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(523.5,26.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(523.5,48.3) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(523.5,48.3) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_50a"><title>gnuplot_plot_50a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(533.9,48.7) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(533.9,48.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(533.9,33.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(533.9,33.4) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_51a"><title>gnuplot_plot_51a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(544.3,43.2) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(544.3,43.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(544.3,23.3) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(544.3,23.3) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 <g color="#FFFFFF" fill="none" stroke="rgb(  0, 114, 189)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="2.00">
@@ -13025,10 +14232,9 @@ where the coefficients $a_n$ and $b_n$ are all real numbers.</p>
 </div>
 </div>
 
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Recovering-a-signal-from-discrete-observations.">Recovering a signal from discrete observations.<a class="anchor-link" href="#Recovering-a-signal-from-discrete-observations.">&#182;</a></h2><ul>
 <li>Suppose that we expect the signal to have the form
@@ -13044,16 +14250,15 @@ where $y_i$ is the observation at time $t_i$.</li>
 
 </div>
 </div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>In theory, we only need 3 equations to determine these 3 unknowns.</li>
 <li>If $y_0$, $y_1$, and $y_2$ are the observations at times $t_0$, $t_1,$ and $t_2$, then we have the system</li>
 </ul>
-<p>\begin{equation}
+\begin{equation}
 \begin{bmatrix}
 1 &amp; \sin(\pi t_0) &amp; \cos(\pi t_0)\\
 1 &amp; \sin(\pi t_1) &amp; \cos(\pi t_1)\\
@@ -13065,11 +14270,10 @@ a_0\\ a_1\\ b_1
 \begin{bmatrix}
 y_0\\ y_1\\ y_2
 \end{bmatrix}
-\end{equation}</p>
-
+\end{equation}
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
@@ -13083,7 +14287,7 @@ y_0\\ y_1\\ y_2
 <span class="nb">rref</span><span class="p">([</span><span class="n">A</span> <span class="n">Y</span><span class="p">])</span> <span class="c"># There is no solution!</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13093,15 +14297,15 @@ y_0\\ y_1\\ y_2
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ans =
 
-   1.00000  -0.00000  -1.00000   2.32265
-   1.00000   0.00000   1.00000  -1.48395
-   1.00000   0.00000  -1.00000   2.58673
+   1.00000  -0.00000  -1.00000   2.47860
+   1.00000   0.00000   1.00000  -1.36069
+   1.00000   0.00000  -1.00000   2.84496
 
 ans =
 
@@ -13116,7 +14320,7 @@ ans =
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
@@ -13129,9 +14333,10 @@ ans =
 <span class="p">[</span><span class="n">A</span> <span class="n">Y</span><span class="p">]</span>
 <span class="nb">rref</span><span class="p">([</span><span class="n">A</span> <span class="n">Y</span><span class="p">])</span> <span class="c"># There is a solution this time, but...</span>
 <span class="n">linsolve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span> <span class="c"># linsolve doesn&#39;t help much here either (3 observations isn&#39;t enough).</span>
+<span class="c"># We get a solution, but not terribly close to the truth f(x) = 1/2 + sin(pi*x) - 2*cos(pi*x);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13141,27 +14346,27 @@ ans =
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ans =
 
-   1.0000e+00  -1.2246e-16  -1.0000e+00   2.3227e+00
-   1.0000e+00  -1.2533e-01  -9.9211e-01   2.2536e+00
-   1.0000e+00  -2.4869e-01  -9.6858e-01   2.2225e+00
+   1.0000e+00  -1.2246e-16  -1.0000e+00   2.4786e+00
+   1.0000e+00  -1.2533e-01  -9.9211e-01   2.4022e+00
+   1.0000e+00  -2.4869e-01  -9.6858e-01   2.2329e+00
 
 ans =
 
-   1.00000   0.00000   0.00000   4.66224
-   0.00000   1.00000   0.00000   0.69824
-   0.00000   0.00000   1.00000   2.33959
+   1.00000   0.00000   0.00000  -3.48163
+   0.00000   1.00000   0.00000   0.23484
+   0.00000   0.00000   1.00000  -5.96023
 
 ans =
 
-   4.66224
-   0.69824
-   2.33959
+  -3.48163
+   0.23484
+  -5.96023
 
 </pre>
 </div>
@@ -13170,10 +14375,9 @@ ans =
 </div>
 </div>
 
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Don't bother trying to guess which 3 equations to use!</li>
@@ -13184,7 +14388,7 @@ ans =
 
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
@@ -13200,7 +14404,7 @@ ans =
 <span class="nb">hold</span> <span class="n">off</span><span class="p">;</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13210,15 +14414,15 @@ ans =
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>c =
 
-   0.51406
-   1.01119
-  -1.98825
+   0.50703
+   0.99858
+  -2.03421
 
 </pre>
 </div>
@@ -13226,7 +14430,7 @@ ans =
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -13338,313 +14542,313 @@ ans =
 <g color="#FFFFFF" fill="none" stroke="black" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
 </g>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(23.4,63.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(23.4,63.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(23.4,51.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(23.4,51.6) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_2a"><title>gnuplot_plot_2a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(33.8,69.0) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(33.8,69.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(33.8,57.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(33.8,57.5) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_3a"><title>gnuplot_plot_3a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(44.2,71.4) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(44.2,71.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(44.2,70.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(44.2,70.6) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_4a"><title>gnuplot_plot_4a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(54.7,98.7) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(54.7,98.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(54.7,82.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(54.7,82.5) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_5a"><title>gnuplot_plot_5a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(65.1,107.8) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(65.1,107.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(65.1,101.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(65.1,101.9) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_6a"><title>gnuplot_plot_6a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(75.5,120.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(75.5,120.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(75.5,137.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(75.5,137.9) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_7a"><title>gnuplot_plot_7a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(85.9,131.2) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(85.9,131.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(85.9,148.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(85.9,148.5) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_8a"><title>gnuplot_plot_8a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(96.3,166.7) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(96.3,166.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(96.3,175.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(96.3,175.7) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_9a"><title>gnuplot_plot_9a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(106.7,195.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(106.7,195.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(106.7,177.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(106.7,177.7) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_10a"><title>gnuplot_plot_10a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(117.2,196.7) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(117.2,196.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(117.2,196.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(117.2,196.2) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_11a"><title>gnuplot_plot_11a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(127.6,250.0) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(127.6,250.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(127.6,229.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(127.6,229.9) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_12a"><title>gnuplot_plot_12a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(138.0,256.8) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(138.0,256.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(138.0,253.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(138.0,253.2) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_13a"><title>gnuplot_plot_13a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(148.4,269.8) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(148.4,269.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(148.4,270.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(148.4,270.4) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_14a"><title>gnuplot_plot_14a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(158.8,293.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(158.8,293.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(158.8,296.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(158.8,296.2) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_15a"><title>gnuplot_plot_15a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(169.3,294.8) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(169.3,294.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(169.3,313.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(169.3,313.0) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_16a"><title>gnuplot_plot_16a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(179.7,322.9) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(179.7,322.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(179.7,332.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(179.7,332.4) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_17a"><title>gnuplot_plot_17a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(190.1,326.9) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(190.1,326.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(190.1,336.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(190.1,336.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_18a"><title>gnuplot_plot_18a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(200.5,348.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(200.5,348.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(200.5,369.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(200.5,369.2) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_19a"><title>gnuplot_plot_19a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(210.9,356.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(210.9,356.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(210.9,349.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(210.9,349.8) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_20a"><title>gnuplot_plot_20a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(221.3,364.2) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(221.3,364.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(221.3,361.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(221.3,361.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_21a"><title>gnuplot_plot_21a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(231.8,378.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(231.8,378.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(231.8,372.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(231.8,372.9) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_22a"><title>gnuplot_plot_22a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(242.2,379.4) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(242.2,379.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(242.2,381.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(242.2,381.9) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_23a"><title>gnuplot_plot_23a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(252.6,374.4) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(252.6,374.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(252.6,374.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(252.6,374.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_24a"><title>gnuplot_plot_24a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(263.0,383.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(263.0,383.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(263.0,374.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(263.0,374.7) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_25a"><title>gnuplot_plot_25a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(273.4,358.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(273.4,358.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(273.4,377.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(273.4,377.7) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_26a"><title>gnuplot_plot_26a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(283.9,357.7) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(283.9,357.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(283.9,348.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(283.9,348.2) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_27a"><title>gnuplot_plot_27a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(294.3,354.5) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(294.3,354.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(294.3,350.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(294.3,350.8) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_28a"><title>gnuplot_plot_28a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(304.7,329.8) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(304.7,329.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(304.7,318.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(304.7,318.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_29a"><title>gnuplot_plot_29a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(315.1,316.0) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(315.1,316.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(315.1,323.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(315.1,323.8) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_30a"><title>gnuplot_plot_30a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(325.5,311.5) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(325.5,311.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(325.5,315.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(325.5,315.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_31a"><title>gnuplot_plot_31a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(335.9,291.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(335.9,291.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(335.9,282.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(335.9,282.2) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_32a"><title>gnuplot_plot_32a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(346.4,256.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(346.4,256.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(346.4,263.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(346.4,263.7) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_33a"><title>gnuplot_plot_33a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(356.8,247.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(356.8,247.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(356.8,254.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(356.8,254.8) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_34a"><title>gnuplot_plot_34a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(367.2,226.3) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(367.2,226.3) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(367.2,227.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(367.2,227.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_35a"><title>gnuplot_plot_35a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(377.6,193.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(377.6,193.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(377.6,206.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(377.6,206.6) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_36a"><title>gnuplot_plot_36a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(388.0,173.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(388.0,173.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(388.0,189.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(388.0,189.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_37a"><title>gnuplot_plot_37a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(398.4,158.2) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(398.4,158.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(398.4,168.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(398.4,168.0) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_38a"><title>gnuplot_plot_38a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(408.9,128.4) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(408.9,128.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(408.9,137.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(408.9,137.0) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_39a"><title>gnuplot_plot_39a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(419.3,93.8) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(419.3,93.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(419.3,115.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(419.3,115.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_40a"><title>gnuplot_plot_40a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(429.7,92.5) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(429.7,92.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(429.7,94.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(429.7,94.6) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_41a"><title>gnuplot_plot_41a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(440.1,88.0) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(440.1,88.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(440.1,74.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(440.1,74.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_42a"><title>gnuplot_plot_42a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(450.5,61.9) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(450.5,61.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(450.5,60.3) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(450.5,60.3) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_43a"><title>gnuplot_plot_43a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(461.0,57.9) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(461.0,57.9) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(461.0,56.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(461.0,56.0) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_44a"><title>gnuplot_plot_44a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(471.4,49.5) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(471.4,49.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(471.4,33.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(471.4,33.7) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_45a"><title>gnuplot_plot_45a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(481.8,31.5) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(481.8,31.5) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(481.8,50.0) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(481.8,50.0) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_46a"><title>gnuplot_plot_46a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(492.2,34.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(492.2,34.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(492.2,29.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(492.2,29.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_47a"><title>gnuplot_plot_47a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(502.6,36.3) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(502.6,36.3) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(502.6,31.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(502.6,31.1) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_48a"><title>gnuplot_plot_48a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(513.0,31.1) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(513.0,31.1) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(513.0,15.8) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(513.0,15.8) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_49a"><title>gnuplot_plot_49a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(523.5,26.6) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(523.5,26.6) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(523.5,48.3) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(523.5,48.3) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_50a"><title>gnuplot_plot_50a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(533.9,48.7) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(533.9,48.7) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(533.9,33.4) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(533.9,33.4) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_51a"><title>gnuplot_plot_51a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<use color="rgb(  0, 114, 189)" transform="translate(544.3,43.2) scale(1.87)" xlink:href="#gpPt6"/>
-	<use color="rgb(  0, 114, 189)" transform="translate(544.3,43.2) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(544.3,23.3) scale(1.87)" xlink:href="#gpPt6"/>
+	<use color="rgb(  0, 114, 189)" transform="translate(544.3,23.3) scale(1.87)" xlink:href="#gpPt6"/>
 </g>
 	</g>
 	<g id="gnuplot_plot_52a"><title>gnuplot_plot_52a</title>
 <g color="black" fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="0.50">
-	<path d="M23.4,49.8 L24.6,50.9 L25.7,52.0 L26.9,53.2 L28.1,54.4 L29.2,55.6 L30.4,56.9 L31.5,58.1   L32.7,59.5 L33.9,60.8 L35.0,62.2 L36.2,63.6 L37.4,65.0 L38.5,66.5 L39.7,67.9 L40.8,69.5   L42.0,71.0 L43.2,72.5 L44.3,74.1 L45.5,75.7 L46.7,77.4 L47.8,79.0 L49.0,80.7 L50.1,82.4   L51.3,84.2 L52.5,85.9 L53.6,87.7 L54.8,89.5 L56.0,91.3 L57.1,93.2 L58.3,95.1 L59.4,96.9   L60.6,98.9 L61.8,100.8 L62.9,102.7 L64.1,104.7 L65.3,106.7 L66.4,108.7 L67.6,110.7 L68.7,112.8   L69.9,114.9 L71.1,116.9 L72.2,119.0 L73.4,121.2 L74.6,123.3 L75.7,125.4 L76.9,127.6 L78.0,129.8   L79.2,132.0 L80.4,134.2 L81.5,136.4 L82.7,138.6 L83.9,140.9 L85.0,143.1 L86.2,145.4 L87.3,147.7   L88.5,150.0 L89.7,152.3 L90.8,154.6 L92.0,156.9 L93.2,159.3 L94.3,161.6 L95.5,163.9 L96.7,166.3   L97.8,168.7 L99.0,171.0 L100.1,173.4 L101.3,175.8 L102.5,178.2 L103.6,180.6 L104.8,183.0 L106.0,185.4   L107.1,187.8 L108.3,190.2 L109.4,192.6 L110.6,195.0 L111.8,197.4 L112.9,199.9 L114.1,202.3 L115.3,204.7   L116.4,207.1 L117.6,209.5 L118.7,211.9 L119.9,214.3 L121.1,216.8 L122.2,219.2 L123.4,221.6 L124.6,224.0   L125.7,226.4 L126.9,228.8 L128.0,231.2 L129.2,233.5 L130.4,235.9 L131.5,238.3 L132.7,240.6 L133.9,243.0   L135.0,245.3 L136.2,247.7 L137.3,250.0 L138.5,252.3 L139.7,254.7 L140.8,257.0 L142.0,259.2 L143.2,261.5   L144.3,263.8 L145.5,266.1 L146.6,268.3 L147.8,270.5 L149.0,272.8 L150.1,275.0 L151.3,277.1 L152.5,279.3   L153.6,281.5 L154.8,283.6 L156.0,285.8 L157.1,287.9 L158.3,290.0 L159.4,292.1 L160.6,294.1 L161.8,296.2   L162.9,298.2 L164.1,300.2 L165.3,302.2 L166.4,304.2 L167.6,306.1 L168.7,308.0 L169.9,310.0 L171.1,311.8   L172.2,313.7 L173.4,315.6 L174.6,317.4 L175.7,319.2 L176.9,321.0 L178.0,322.7 L179.2,324.4 L180.4,326.2   L181.5,327.8 L182.7,329.5 L183.9,331.1 L185.0,332.7 L186.2,334.3 L187.3,335.9 L188.5,337.4 L189.7,338.9   L190.8,340.4 L192.0,341.9 L193.2,343.3 L194.3,344.7 L195.5,346.0 L196.6,347.4 L197.8,348.7 L199.0,350.0   L200.1,351.2 L201.3,352.5 L202.5,353.7 L203.6,354.8 L204.8,356.0 L205.9,357.1 L207.1,358.2 L208.3,359.2   L209.4,360.2 L210.6,361.2 L211.8,362.2 L212.9,363.1 L214.1,364.0 L215.2,364.8 L216.4,365.7 L217.6,366.5   L218.7,367.2 L219.9,368.0 L221.1,368.7 L222.2,369.3 L223.4,370.0 L224.6,370.6 L225.7,371.1 L226.9,371.7   L228.0,372.2 L229.2,372.6 L230.4,373.1 L231.5,373.5 L232.7,373.9 L233.9,374.2 L235.0,374.5 L236.2,374.8   L237.3,375.0 L238.5,375.2 L239.7,375.4 L240.8,375.5 L242.0,375.6 L243.2,375.7 L244.3,375.7 L245.5,375.7   L246.6,375.7 L247.8,375.6 L249.0,375.5 L250.1,375.4 L251.3,375.2 L252.5,375.0 L253.6,374.7 L254.8,374.5   L255.9,374.2 L257.1,373.8 L258.3,373.4 L259.4,373.0 L260.6,372.6 L261.8,372.1 L262.9,371.6 L264.1,371.1   L265.2,370.5 L266.4,369.9 L267.6,369.3 L268.7,368.6 L269.9,367.9 L271.1,367.2 L272.2,366.4 L273.4,365.6   L274.5,364.8 L275.7,363.9 L276.9,363.0 L278.0,362.1 L279.2,361.1 L280.4,360.1 L281.5,359.1 L282.7,358.1   L283.9,357.0 L285.0,355.9 L286.2,354.7 L287.3,353.6 L288.5,352.4 L289.7,351.1 L290.8,349.9 L292.0,348.6   L293.2,347.3 L294.3,345.9 L295.5,344.5 L296.6,343.1 L297.8,341.7 L299.0,340.3 L300.1,338.8 L301.3,337.3   L302.5,335.7 L303.6,334.2 L304.8,332.6 L305.9,331.0 L307.1,329.3 L308.3,327.7 L309.4,326.0 L310.6,324.3   L311.8,322.6 L312.9,320.8 L314.1,319.0 L315.2,317.2 L316.4,315.4 L317.6,313.5 L318.7,311.7 L319.9,309.8   L321.1,307.9 L322.2,305.9 L323.4,304.0 L324.5,302.0 L325.7,300.0 L326.9,298.0 L328.0,296.0 L329.2,293.9   L330.4,291.9 L331.5,289.8 L332.7,287.7 L333.8,285.6 L335.0,283.4 L336.2,281.3 L337.3,279.1 L338.5,276.9   L339.7,274.8 L340.8,272.5 L342.0,270.3 L343.1,268.1 L344.3,265.8 L345.5,263.6 L346.6,261.3 L347.8,259.0   L349.0,256.7 L350.1,254.4 L351.3,252.1 L352.5,249.8 L353.6,247.5 L354.8,245.1 L355.9,242.8 L357.1,240.4   L358.3,238.1 L359.4,235.7 L360.6,233.3 L361.8,230.9 L362.9,228.5 L364.1,226.1 L365.2,223.7 L366.4,221.3   L367.6,218.9 L368.7,216.5 L369.9,214.1 L371.1,211.7 L372.2,209.3 L373.4,206.9 L374.5,204.5 L375.7,202.0   L376.9,199.6 L378.0,197.2 L379.2,194.8 L380.4,192.4 L381.5,190.0 L382.7,187.6 L383.8,185.2 L385.0,182.8   L386.2,180.4 L387.3,178.0 L388.5,175.6 L389.7,173.2 L390.8,170.8 L392.0,168.4 L393.1,166.1 L394.3,163.7   L395.5,161.4 L396.6,159.0 L397.8,156.7 L399.0,154.4 L400.1,152.1 L401.3,149.8 L402.4,147.5 L403.6,145.2   L404.8,142.9 L405.9,140.7 L407.1,138.4 L408.3,136.2 L409.4,134.0 L410.6,131.8 L411.7,129.6 L412.9,127.4   L414.1,125.2 L415.2,123.1 L416.4,121.0 L417.6,118.8 L418.7,116.7 L419.9,114.7 L421.1,112.6 L422.2,110.6   L423.4,108.5 L424.5,106.5 L425.7,104.5 L426.9,102.6 L428.0,100.6 L429.2,98.7 L430.4,96.8 L431.5,94.9   L432.7,93.0 L433.8,91.2 L435.0,89.3 L436.2,87.5 L437.3,85.8 L438.5,84.0 L439.7,82.3 L440.8,80.6   L442.0,78.9 L443.1,77.2 L444.3,75.6 L445.5,74.0 L446.6,72.4 L447.8,70.8 L449.0,69.3 L450.1,67.8   L451.3,66.3 L452.4,64.9 L453.6,63.4 L454.8,62.1 L455.9,60.7 L457.1,59.3 L458.3,58.0 L459.4,56.7   L460.6,55.5 L461.7,54.3 L462.9,53.1 L464.1,51.9 L465.2,50.8 L466.4,49.6 L467.6,48.6 L468.7,47.5   L469.9,46.5 L471.0,45.5 L472.2,44.6 L473.4,43.6 L474.5,42.8 L475.7,41.9 L476.9,41.1 L478.0,40.3   L479.2,39.5 L480.4,38.8 L481.5,38.1 L482.7,37.4 L483.8,36.8 L485.0,36.2 L486.2,35.6 L487.3,35.1   L488.5,34.6 L489.7,34.1 L490.8,33.6 L492.0,33.2 L493.1,32.9 L494.3,32.5 L495.5,32.2 L496.6,32.0   L497.8,31.7 L499.0,31.5 L500.1,31.4 L501.3,31.2 L502.4,31.1 L503.6,31.1 L504.8,31.0 L505.9,31.0   L507.1,31.1 L508.3,31.1 L509.4,31.2 L510.6,31.4 L511.7,31.5 L512.9,31.8 L514.1,32.0 L515.2,32.3   L516.4,32.6 L517.6,32.9 L518.7,33.3 L519.9,33.7 L521.0,34.1 L522.2,34.6 L523.4,35.1 L524.5,35.6   L525.7,36.2 L526.9,36.8 L528.0,37.5 L529.2,38.1 L530.3,38.8 L531.5,39.6 L532.7,40.3 L533.8,41.1   L535.0,42.0 L536.2,42.8 L537.3,43.7 L538.5,44.7 L539.6,45.6 L540.8,46.6 L542.0,47.6 L543.1,48.7   L544.3,49.8  " stroke="rgb(217,  83,  25)"/></g>
+	<path d="M23.4,46.7 L25.7,49.0 L28.1,51.3 L30.4,53.8 L32.7,56.4 L35.0,59.1 L37.4,61.9 L39.7,64.8   L42.0,67.9 L44.3,71.0 L46.7,74.2 L49.0,77.6 L51.3,81.0 L53.6,84.6 L56.0,88.2 L58.3,92.0   L60.6,95.8 L62.9,99.7 L65.3,103.7 L67.6,107.7 L69.9,111.9 L72.2,116.1 L74.6,120.4 L76.9,124.7   L79.2,129.1 L81.5,133.6 L83.9,138.1 L86.2,142.7 L88.5,147.3 L90.8,152.0 L93.2,156.7 L95.5,161.5   L97.8,166.2 L100.1,171.0 L102.5,175.9 L104.8,180.7 L107.1,185.6 L109.4,190.5 L111.8,195.4 L114.1,200.3   L116.4,205.2 L118.7,210.1 L121.1,215.0 L123.4,219.9 L125.7,224.8 L128.0,229.7 L130.4,234.5 L132.7,239.4   L135.0,244.2 L137.3,248.9 L139.7,253.6 L142.0,258.3 L144.3,263.0 L146.6,267.6 L149.0,272.1 L151.3,276.6   L153.6,281.1 L156.0,285.4 L158.3,289.7 L160.6,294.0 L162.9,298.2 L165.3,302.3 L167.6,306.3 L169.9,310.2   L172.2,314.1 L174.6,317.9 L176.9,321.6 L179.2,325.1 L181.5,328.6 L183.9,332.0 L186.2,335.3 L188.5,338.5   L190.8,341.6 L193.2,344.6 L195.5,347.5 L197.8,350.2 L200.1,352.8 L202.5,355.4 L204.8,357.8 L207.1,360.1   L209.4,362.2 L211.8,364.2 L214.1,366.2 L216.4,367.9 L218.7,369.6 L221.1,371.1 L223.4,372.5 L225.7,373.8   L228.0,374.9 L230.4,375.9 L232.7,376.7 L235.0,377.4 L237.3,378.0 L239.7,378.5 L242.0,378.8 L244.3,378.9   L246.6,379.0 L249.0,378.9 L251.3,378.6 L253.6,378.2 L255.9,377.7 L258.3,377.1 L260.6,376.3 L262.9,375.4   L265.2,374.3 L267.6,373.1 L269.9,371.8 L272.2,370.3 L274.5,368.7 L276.9,367.0 L279.2,365.1 L281.5,363.2   L283.9,361.1 L286.2,358.8 L288.5,356.5 L290.8,354.0 L293.2,351.4 L295.5,348.7 L297.8,345.9 L300.1,343.0   L302.5,340.0 L304.8,336.8 L307.1,333.6 L309.4,330.2 L311.8,326.8 L314.1,323.2 L316.4,319.6 L318.7,315.9   L321.1,312.0 L323.4,308.1 L325.7,304.1 L328.0,300.1 L330.4,295.9 L332.7,291.7 L335.0,287.4 L337.3,283.1   L339.7,278.7 L342.0,274.2 L344.3,269.7 L346.6,265.1 L349.0,260.5 L351.3,255.8 L353.6,251.1 L355.9,246.4   L358.3,241.6 L360.6,236.8 L362.9,231.9 L365.2,227.1 L367.6,222.2 L369.9,217.3 L372.2,212.4 L374.5,207.5   L376.9,202.6 L379.2,197.7 L381.5,192.8 L383.8,187.9 L386.2,183.0 L388.5,178.1 L390.8,173.3 L393.1,168.5   L395.5,163.7 L397.8,158.9 L400.1,154.2 L402.4,149.5 L404.8,144.8 L407.1,140.2 L409.4,135.7 L411.7,131.2   L414.1,126.8 L416.4,122.4 L418.7,118.1 L421.1,113.8 L423.4,109.6 L425.7,105.5 L428.0,101.5 L430.4,97.6   L432.7,93.7 L435.0,89.9 L437.3,86.3 L439.7,82.7 L442.0,79.2 L444.3,75.8 L446.6,72.5 L449.0,69.3   L451.3,66.2 L453.6,63.2 L455.9,60.4 L458.3,57.6 L460.6,55.0 L462.9,52.4 L465.2,50.0 L467.6,47.8   L469.9,45.6 L472.2,43.6 L474.5,41.7 L476.9,39.9 L479.2,38.2 L481.5,36.7 L483.8,35.3 L486.2,34.1   L488.5,32.9 L490.8,31.9 L493.1,31.1 L495.5,30.4 L497.8,29.8 L500.1,29.3 L502.4,29.0 L504.8,28.9   L507.1,28.8 L509.4,28.9 L511.7,29.2 L514.1,29.6 L516.4,30.1 L518.7,30.7 L521.0,31.5 L523.4,32.5   L525.7,33.5 L528.0,34.7 L530.3,36.0 L532.7,37.5 L535.0,39.1 L537.3,40.8 L539.6,42.7 L542.0,44.6   L544.3,46.7  " stroke="rgb(217,  83,  25)"/></g>
 	</g>
 <g color="#FFFFFF" fill="none" stroke="rgb(217,  83,  25)" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="2.00">
 </g>
@@ -13665,10 +14869,9 @@ ans =
 </div>
 </div>
 
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>MATLAB/Octave automatically detects when an overdetermined system has no exact solution. </li>
@@ -13680,7 +14883,7 @@ ans =
 
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
@@ -13689,7 +14892,7 @@ ans =
 <div class=" highlight hl-octave"><pre><span></span><span class="n">linsolve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span> <span class="c"># Uses Gram--Schmidt (QR decomposition) under the hood.</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13699,15 +14902,15 @@ ans =
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ans =
 
-   0.51406
-   1.01119
-  -1.98825
+   0.50703
+   0.99858
+  -2.03421
 
 </pre>
 </div>
@@ -13716,74 +14919,12 @@ ans =
 </div>
 </div>
 
-</div></div></section></section>
 </div>
-</div>
-
-<script>
-
-require(
-    {
-      // it makes sense to wait a little bit when you are loading
-      // reveal from a cdn in a slow connection environment
-      waitSeconds: 15
-    },
-    [
-      "reveal.js/lib/js/head.min.js",
-      "reveal.js/js/reveal.js"
-    ],
-
-    function(head, Reveal){
-
-        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-
-            transition: "slide",
-
-            // Optional libraries used to extend on reveal.js
-            dependencies: [
-                { src: "reveal.js/lib/js/classList.js",
-                  condition: function() { return !document.body.classList; } },
-                { src: "reveal.js/plugin/notes/notes.js",
-                  async: true,
-                  condition: function() { return !!document.body.classList; } }
-            ]
-        });
-
-        var update = function(event){
-          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
-            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
-          }
-        };
-
-        Reveal.addEventListener('slidechanged', update);
-
-        function setScrollingSlide() {
-            var scroll = false
-            if (scroll === true) {
-              var h = $('.reveal').height() * 0.95;
-              $('section.present').find('section')
-                .filter(function() {
-                  return $(this).height() > h;
-                })
-                .css('height', 'calc(95vh)')
-                .css('overflow-y', 'scroll')
-                .css('margin-top', '20px');
-            }
-        }
-
-        // check and set the scrolling slide every time the slide change
-        Reveal.addEventListener('slidechanged', setScrollingSlide);
-
-    }
-
-);
-</script>
-
+    </div>
+  </div>
 </body>
+
+ 
 
 
 </html>
